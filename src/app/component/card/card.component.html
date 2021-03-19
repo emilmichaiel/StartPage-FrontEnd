@@ -1,0 +1,24 @@
+<div class="content-wrapper">
+
+  <div class="card" *ngFor="let card of cards">
+    <a href="{{card.url}}" class="card-link"></a>
+    <img [src]="card.image.base64Image| base64" alt="" class="card-image">
+    <div class="card-text-wrapper">
+      <h2 class="card-title">{{card.title}}</h2>
+      <div class="card-details-wrapper">
+        <p class="card-excerpt">{{card.description}}</p>
+        <button *ngIf="isAuth" mat-flat-button class="card-button" color="primary" (click)="openEditCardDialog(card)">
+          Edit
+        </button>
+        <button *ngIf="isAuth" mat-flat-button class="card-button" color="warn"
+                (click)="openDeleteCardDialog(card.id, card.title)">Delete
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<button mat-fab class="add-button" color="primary" (click)="openAddCardDialog()" *ngIf="isAuth">
+  <mat-icon>add</mat-icon>
+</button>

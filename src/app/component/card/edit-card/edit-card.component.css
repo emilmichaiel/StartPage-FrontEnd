@@ -1,0 +1,29 @@
+@media (max-width: 600px) {
+  .card-container {
+    width: 90%;
+  }
+}
+
+.full-width {
+  width: 100%;
+}
+
+button {
+  width: 100%;
+}
+
+.card-form {
+  width: 100%;
+}
+
+mat-spinner {
+  margin: 0 auto;
+}
+
+.error-message {
+  color: red;
+}
+
+.center-div {
+  text-align: center;
+}

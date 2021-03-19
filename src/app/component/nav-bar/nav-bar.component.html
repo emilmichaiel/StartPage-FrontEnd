@@ -1,0 +1,31 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="onToggleSidenav()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <button mat-button routerLink="">
+    <span class="mat-headline">Gemz</span>
+  </button>
+
+  <span class="spacer"></span>
+  <button mat-icon-button
+          class="not-active"
+          routerLink="login"
+          routerLinkActive="active"
+          *ngIf="!isAuth">
+    <mat-icon>login</mat-icon>
+  </button>
+  <button mat-icon-button
+          class="not-active"
+          routerLink="settings"
+          routerLinkActive="active"
+          *ngIf="isAuth">
+    <mat-icon>settings</mat-icon>
+  </button>
+  <button mat-icon-button
+          class="not-active"
+          *ngIf="isAuth"
+          (click)="triggerLogout()">
+    <mat-icon>logout</mat-icon>
+  </button>
+
+</mat-toolbar>

@@ -1,0 +1,15 @@
+mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+  height: 100%;
+}
+
+mat-sidenav {
+  width: 250px;
+}
+
+.container {
+  margin: 30px;
+}
+
+.side-nav-bg {
+  background-color: #3F51B5;
+}

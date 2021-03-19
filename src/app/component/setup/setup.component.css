@@ -1,0 +1,31 @@
+.reg-container {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+@media (max-width: 600px) {
+  .reg-container {
+    width: 90%;
+  }
+}
+
+.full-width {
+  width: 100%;
+}
+
+button {
+  width: 100%;
+}
+
+.reg-form {
+  width: 100%;
+}
+
+mat-spinner {
+  margin: 0 auto;
+}
+
+.error-message{
+  color: red;
+}

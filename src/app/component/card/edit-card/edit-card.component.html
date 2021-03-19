@@ -1,0 +1,51 @@
+<mat-dialog-content>
+  <div class="card-container" *ngIf="!isSendingPut">
+    <div style="text-align: center">
+      <strong class="mat-display-1">Edit Card</strong>
+    </div>
+    <hr>
+    <form class="card-form" [formGroup]="addCardForm" (ngSubmit)="onEditCard()">
+
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Title</mat-label>
+        <label>
+          <input matInput formControlName="title">
+        </label>
+        <mat-hint
+          *ngIf="!addCardForm.get('title').valid && addCardForm.get('title').touched"
+          class="error-message">
+          <p *ngIf="addCardForm.get('title').errors.required">
+            Title cannot be empty</p>
+        </mat-hint>
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Description</mat-label>
+        <label>
+          <input matInput formControlName="description">
+        </label>
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Url</mat-label>
+        <label>
+          <input matInput formControlName="url">
+        </label>
+        <mat-hint
+          *ngIf="!addCardForm.get('url').valid && addCardForm.get('url').touched"
+          class="error-message">
+          <p *ngIf="addCardForm.get('url').errors.required">
+            Url cannot be empty</p>
+        </mat-hint>
+      </mat-form-field>
+
+      <hr>
+      <button type="submit" mat-flat-button mat-dialog-close [disabled]="!this.addCardForm.valid" color="primary">Apply
+        Edit
+      </button>
+    </form>
+  </div>
+  <div class="card-container" *ngIf="isSendingPut">
+    <mat-spinner></mat-spinner>
+  </div>
+</mat-dialog-content>
